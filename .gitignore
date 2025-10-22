@@ -10,7 +10,7 @@ venv/
 *.DS_Store
 *.bak
 
-# C/C++
+# C/C++/asm
 *.out
 *.o
 *.a
