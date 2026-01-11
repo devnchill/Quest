@@ -1,1 +1,1 @@
-A repo for my coding notes and practice.
+Hoping to write hello world in all programming languages before i die
