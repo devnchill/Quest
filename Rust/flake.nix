@@ -5,27 +5,30 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
-  let 
-  	system  = "x86_64-linux";
-	pkgs = nixpkgs.legacyPackages.${system};
-   in 
-  {
-	devShells.${system}.default = pkgs.mkShell{
-		packages = with pkgs;[
-			nixfmt 
-			nil 
-			cargo
-			rustc
-			rust-analyzer
-			rustfmt
-			pkg-config
-			openssl
-		];
-		env = {
-			RUST_BACKTRACE = "full";
-		};
-	};	
+  outputs =
+    { self, nixpkgs }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          nixfmt
+          nil
+          cargo
+          rustc
+          rust-analyzer
+          clippy
+          rustfmt
+          pkg-config
+          openssl
+          rustlings
+        ];
+        env = {
+          RUST_BACKTRACE = "full";
+        };
+      };
 
-  };
+    };
 }
