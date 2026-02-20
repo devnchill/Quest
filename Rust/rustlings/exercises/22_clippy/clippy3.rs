@@ -1,6 +1,3 @@
-// Here are some more easy Clippy fixes so you can see its utility 📎
-// TODO: Fix all the Clippy lints.
-
 #[rustfmt::skip]
 #[allow(unused_variables, unused_assignments)]
 fn main() {
